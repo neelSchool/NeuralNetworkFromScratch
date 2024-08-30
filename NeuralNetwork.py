@@ -48,3 +48,16 @@ class NeuralNetwork:
             gradients['dW' + str(i)] = dW
             gradients['db' + str(i)] = db
         return gradients
+    def update_params(self, gradients, learning_rate):
+        for i in range(1, len(self.params) // 2 + 1):
+            self.params['W' + str(i)] -= learning_rate * gradients['dW' + str(i)]
+            self.params['b' + str(i)] -= learning_rate * gradients['db' + str(i)]
+
+    def train(self, X, Y, epochs, learning_rate):
+        for i in range(epochs):
+            A = self.forward(X)
+            gradients = self.backward(X, Y)
+            self.update_params(gradients, learning_rate)
+            if i % 100 == 0:
+                loss = np.mean(np.square(Y-A))
+                print(f"Epoch is {i}, Loss is {loss:.4f}")
