@@ -30,3 +30,10 @@ class NeuralNetwork:
             self.cache['A' + str(i)] = A
             self.cache['Z' + str(i)] = Z
         return A
+
+    def backward(self, X, Y):
+        m = Y.shape[1]
+        L = len(self.params) // 2
+        A_last = self.cache['A' + str(L)]
+        dZ = A_last - Y
+        dW= np.dot(dZ, self.cache['A' + str(L-1)].T) / m
