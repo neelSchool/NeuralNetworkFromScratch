@@ -23,6 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "neelSchool"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/neelSchool/NeuralNetworkFromScratch.git",
+    "accountId": "fe071585-f4f4-4e34-9ecc-b6d8014c5804"
+  }
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -66,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724949958686</updated>
       <workItem from="1724949962728" duration="2427000" />
-      <workItem from="1725022233643" duration="2233000" />
+      <workItem from="1725022233643" duration="2999000" />
     </task>
     <task id="LOCAL-00001" summary="created">
       <option name="closed" value="true" />
@@ -92,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725024008774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="forward passing implemented">
+      <option name="closed" value="true" />
+      <created>1725024600687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725024600687</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

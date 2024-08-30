@@ -37,3 +37,14 @@ class NeuralNetwork:
         A_last = self.cache['A' + str(L)]
         dZ = A_last - Y
         dW= np.dot(dZ, self.cache['A' + str(L-1)].T) / m
+        db = np.sum(dZ, axis=1, keepdims=True) / m
+        gradients = {'dW' + str(L): dW, 'db' + str(L): db}
+
+        for i in reversed(range(1, L)):
+            dA = np.dot(self.params['W' + str(i + 1)].T, dZ)
+            dZ = dA * leaky_relu_derivative(self.cache['Z' + str(i)])
+            dW = np.dot(dZ, self.cache['A' + str(i - 1)].T) / m
+            db = np.sum(dZ, axis=1, keepdims=True) / m
+            gradients['dW' + str(i)] = dW
+            gradients['db' + str(i)] = db
+        return gradients
