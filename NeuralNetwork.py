@@ -61,3 +61,20 @@ class NeuralNetwork:
             if i % 100 == 0:
                 loss = np.mean(np.square(Y-A))
                 print(f"Epoch is {i}, Loss is {loss:.4f}")
+
+np.random.seed(0)
+X = np.random.randn(2, 200)
+Y = (X[0] + X[1] > 1).astype(float).reshape(-1, 1)
+
+layer_dims = [2,4,1]
+nn = NeuralNetwork(layer_dims)
+nn.train(X,Y,epochs = 100, learning_rate = 0.01)
+
+predictions = nn.forward(X)
+
+plt.scatter(X[0], X[1], c=predictions[0], cmap = 'rainbow', edgecolors = 'black')
+plt.title("My Neural Network Prediction")
+plt.xlabel("F1")
+plt.ylabel("F2")
+plt.colorbar(label="prediction")
+plt.show()

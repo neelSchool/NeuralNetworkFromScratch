@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3ade883-2dc1-49ce-9327-918b2339fc8c" name="Changes" comment="back propogation done">
+    <list default="true" id="b3ade883-2dc1-49ce-9327-918b2339fc8c" name="Changes" comment="network done, dataset still needed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724949958686</updated>
       <workItem from="1724949962728" duration="2427000" />
-      <workItem from="1725022233643" duration="4403000" />
+      <workItem from="1725022233643" duration="5176000" />
     </task>
     <task id="LOCAL-00001" summary="created">
       <option name="closed" value="true" />
@@ -120,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725025522854</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="network done, dataset still needed">
+      <option name="closed" value="true" />
+      <created>1725027026845</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725027026845</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,9 +138,10 @@
     <MESSAGE value="python file" />
     <MESSAGE value="forward passing implemented" />
     <MESSAGE value="back propogation done" />
-    <option name="LAST_COMMIT_MESSAGE" value="back propogation done" />
+    <MESSAGE value="network done, dataset still needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="network done, dataset still needed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NeuralNetworkFromScratch$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1725023900513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NeuralNetworkFromScratch$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1725027390574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
