@@ -68,11 +68,11 @@ class NeuralNetwork:
                 loss = np.mean(np.square(Y - A))
                 print(f"Epoch {i}, Loss: {loss:.4f}")
 
-np.random.seed(0)
+np.random.seed(1)
 X = np.random.randn(2, 100)  # X should have shape (2, 100)
 Y = (X[0] + X[1] > 1).astype(float).reshape(1, -1)  # Y should have shape (1, 100)
 
-layer_dims = [2, 4, 1]  # Input layer: 2 neurons, Hidden layer: 4 neurons, Output layer: 1 neuron
+layer_dims = [2, 96, 10]  # Input layer: 2 neurons, Hidden layer: 96 neurons, Output layer: 1 neuron
 nn = NeuralNetwork(layer_dims)
 nn.train(X, Y, epochs=1000, learning_rate=0.01)
 
