@@ -23,7 +23,7 @@ class NeuralNetwork:
     def forward(self, X):
         self.cache = {}
         A = X
-        L = len(self.params)
+        L = len(self.params) // 2
         for i in range(1, L + 1):
             Z = np.dot(self.params['W' + str(i)], A) + self.params['b' + str(i)]
             A = leaky_relu(Z)
@@ -36,18 +36,24 @@ class NeuralNetwork:
         L = len(self.params) // 2
         A_last = self.cache['A' + str(L)]
         dZ = A_last - Y
-        dW= np.dot(dZ, self.cache['A' + str(L-1)].T) / m
+        dW = np.dot(dZ, self.cache['A' + str(L-1)].T) / m
         db = np.sum(dZ, axis=1, keepdims=True) / m
         gradients = {'dW' + str(L): dW, 'db' + str(L): db}
 
         for i in reversed(range(1, L)):
             dA = np.dot(self.params['W' + str(i+1)].T, dZ)
             dZ = dA * leaky_relu_derivative(self.cache['Z' + str(i)])
-            dW = np.dot(dZ, self.cache['A' + str(i - 1)].T) / m
+            
+            if i == 1:
+                dW = np.dot(dZ, X.T) / m  # Use X as A0
+            else:
+                dW = np.dot(dZ, self.cache['A' + str(i-1)].T) / m
+
             db = np.sum(dZ, axis=1, keepdims=True) / m
             gradients['dW' + str(i)] = dW
             gradients['db' + str(i)] = db
-        return gradients #yes
+        return gradients
+
     def update_params(self, gradients, learning_rate):
         for i in range(1, len(self.params) // 2 + 1):
             self.params['W' + str(i)] -= learning_rate * gradients['dW' + str(i)]
@@ -56,23 +62,23 @@ class NeuralNetwork:
     def train(self, X, Y, epochs, learning_rate):
         for i in range(epochs):
             A = self.forward(X)
-            gradients = self.backward(X,Y)
+            gradients = self.backward(X, Y)
             self.update_params(gradients, learning_rate)
             if i % 100 == 0:
-                loss = np.mean(np.square(Y-A))
-                print(f"Epoch is {i}, Loss is {loss:.4f}")
+                loss = np.mean(np.square(Y - A))
+                print(f"Epoch {i}, Loss: {loss:.4f}")
 
 np.random.seed(0)
-X = np.random.randn(2, 100)
-Y = (X[0] + X[1] > 1).astype(float).reshape(-1, 1)
+X = np.random.randn(2, 100)  # X should have shape (2, 100)
+Y = (X[0] + X[1] > 1).astype(float).reshape(1, -1)  # Y should have shape (1, 100)
 
-layer_dims = [2,4,1]
+layer_dims = [2, 4, 1]  # Input layer: 2 neurons, Hidden layer: 4 neurons, Output layer: 1 neuron
 nn = NeuralNetwork(layer_dims)
-nn.train(X,Y,epochs = 1000, learning_rate = 0.01)
+nn.train(X, Y, epochs=1000, learning_rate=0.01)
 
 predictions = nn.forward(X)
 
-plt.scatter(X[0], X[1], c=predictions[0], cmap = 'rainbow', edgecolors = 'black')
+plt.scatter(X[0], X[1], c=predictions[0], cmap='rainbow', edgecolors='black')
 plt.title("My Neural Network Prediction")
 plt.xlabel("F1")
 plt.ylabel("F2")
