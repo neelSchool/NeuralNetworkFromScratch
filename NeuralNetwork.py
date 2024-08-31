@@ -16,8 +16,8 @@ class NeuralNetwork:
         params = {}
         L = len(layer_dims)
         for i in range(1, L):
-            params['W' + str(i)] = np.random.randn(layer_dims[i], layer_dims[i - 1] * 0.01)
-            params['b' + str(i)] = np.zeros(layer_dims[i], 1)
+            params['W' + str(i)] = np.random.randn(layer_dims[i], layer_dims[i - 1]) * 0.01
+            params['b' + str(i)] = np.zeros((layer_dims[i], 1))
         return params
 
     def forward(self, X):
@@ -41,7 +41,7 @@ class NeuralNetwork:
         gradients = {'dW' + str(L): dW, 'db' + str(L): db}
 
         for i in reversed(range(1, L)):
-            dA = np.dot(self.params['W' + str(i + 1)].T, dZ)
+            dA = np.dot(self.params['W' + str(i+1)].T, dZ)
             dZ = dA * leaky_relu_derivative(self.cache['Z' + str(i)])
             dW = np.dot(dZ, self.cache['A' + str(i - 1)].T) / m
             db = np.sum(dZ, axis=1, keepdims=True) / m
@@ -56,19 +56,19 @@ class NeuralNetwork:
     def train(self, X, Y, epochs, learning_rate):
         for i in range(epochs):
             A = self.forward(X)
-            gradients = self.backward(X, Y)
+            gradients = self.backward(X,Y)
             self.update_params(gradients, learning_rate)
             if i % 100 == 0:
                 loss = np.mean(np.square(Y-A))
                 print(f"Epoch is {i}, Loss is {loss:.4f}")
 
 np.random.seed(0)
-X = np.random.randn(2, 200)
+X = np.random.randn(2, 100)
 Y = (X[0] + X[1] > 1).astype(float).reshape(-1, 1)
 
 layer_dims = [2,4,1]
 nn = NeuralNetwork(layer_dims)
-nn.train(X,Y,epochs = 100, learning_rate = 0.01)
+nn.train(X,Y,epochs = 1000, learning_rate = 0.01)
 
 predictions = nn.forward(X)
 
