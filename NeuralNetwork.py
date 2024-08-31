@@ -47,7 +47,7 @@ class NeuralNetwork:
             db = np.sum(dZ, axis=1, keepdims=True) / m
             gradients['dW' + str(i)] = dW
             gradients['db' + str(i)] = db
-        return gradients
+        return gradients #yes
     def update_params(self, gradients, learning_rate):
         for i in range(1, len(self.params) // 2 + 1):
             self.params['W' + str(i)] -= learning_rate * gradients['dW' + str(i)]
