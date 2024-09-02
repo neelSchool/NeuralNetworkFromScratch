@@ -45,7 +45,7 @@ class NeuralNetwork:
             dZ = dA * leaky_relu_derivative(self.cache['Z' + str(i)])
             
             if i == 1:
-                dW = np.dot(dZ, X.T) / m  # Use X as A0
+                dW = np.dot(dZ, X.T) / m
             else:
                 dW = np.dot(dZ, self.cache['A' + str(i-1)].T) / m
 
@@ -68,11 +68,12 @@ class NeuralNetwork:
                 loss = np.mean(np.square(Y - A))
                 print(f"Epoch {i}, Loss: {loss:.4f}")
 
-np.random.seed(1)
-X = np.random.randn(2, 100)  # X should have shape (2, 100)
-Y = (X[0] + X[1] > 1).astype(float).reshape(1, -1)  # Y should have shape (1, 100)
+np.random.seed(0)
+inputNeurons = 2
+X = np.random.randn(inputNeurons, 100)
+Y = (X[0] + X[1] > 1).astype(float).reshape(1, -1)
 
-layer_dims = [2, 96, 10]  # Input layer: 2 neurons, Hidden layer: 96 neurons, Output layer: 1 neuron
+layer_dims = [inputNeurons, 96, 10]
 nn = NeuralNetwork(layer_dims)
 nn.train(X, Y, epochs=1000, learning_rate=0.01)
 
