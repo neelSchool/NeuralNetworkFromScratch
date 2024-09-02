@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3ade883-2dc1-49ce-9327-918b2339fc8c" name="Changes" comment="neurons amount updated">
+    <list default="true" id="b3ade883-2dc1-49ce-9327-918b2339fc8c" name="Changes" comment="input nuerons updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +82,7 @@
       <workItem from="1725110514366" duration="1363000" />
       <workItem from="1725113622155" duration="1005000" />
       <workItem from="1725207678535" duration="1145000" />
+      <workItem from="1725277709962" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="created">
       <option name="closed" value="true" />
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725114550043</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="input nuerons updated">
+      <option name="closed" value="true" />
+      <created>1725278005756</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1725278005756</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,9 +187,10 @@
     <MESSAGE value="fully done but not tested" />
     <MESSAGE value="i have no clue whats wrong" />
     <MESSAGE value="neurons amount updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="neurons amount updated" />
+    <MESSAGE value="input nuerons updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="input nuerons updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NeuralNetworkFromScratch$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1725208712205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NeuralNetworkFromScratch$NeuralNetwork.coverage" NAME="NeuralNetwork Coverage Results" MODIFIED="1725277977890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

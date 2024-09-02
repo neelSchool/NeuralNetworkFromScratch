@@ -69,11 +69,10 @@ class NeuralNetwork:
                 print(f"Epoch {i}, Loss: {loss:.4f}")
 
 np.random.seed(0)
-inputNeurons = 2
-X = np.random.randn(inputNeurons, 100)
+X = np.random.randn(2, 100)
 Y = (X[0] + X[1] > 1).astype(float).reshape(1, -1)
 
-layer_dims = [inputNeurons, 96, 10]
+layer_dims = [2, 96, 7]
 nn = NeuralNetwork(layer_dims)
 nn.train(X, Y, epochs=1000, learning_rate=0.01)
 
